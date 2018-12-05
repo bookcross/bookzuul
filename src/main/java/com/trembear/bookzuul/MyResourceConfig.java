@@ -43,7 +43,7 @@ public class MyResourceConfig extends ResourceServerConfigurerAdapter {
                 .loginPage("/login")
                 .and()
                 .authorizeRequests()
-                .antMatchers("login","oauth/**").permitAll()
+                .antMatchers("login","oauth/**","/public").permitAll()
                 .anyRequest()
                 // 通过自定义requestAuthenticationService类对请求的url进行鉴权校验
                 .access("@requestAuthenticationService.isPossessPermission(authentication, request)")

@@ -20,7 +20,7 @@ public class RequestAuthenticationService {
      *@description  是否拥有控制权限
      *@param  [ authentication,request ]
      *@return boolean
-     *@Author junwei.xiong@ucarinc.com
+     *@Author junwei.xiong
      *@date 16:15 2018/11/27
      **/
     public boolean isPossessPermission(Authentication authentication, HttpServletRequest request){
@@ -31,7 +31,7 @@ public class RequestAuthenticationService {
             logger.info("UserDetails正常用户为"+ backendUser.getUsername());
         }else{
            String name=(String)principal;
-            if(name.equals("anonymousUser")){
+            if(!name.equals("tom")){
                 logger.info("匿名用户为"+ principal);
                 return false;
             }
